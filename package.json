@@ -1,0 +1,22 @@
+{
+  "name": "matter-collision-events",
+  "version": "0.0.1",
+  "description": "Matter.js body collisions events plugin",
+  "main": "matter-collision-events.js",
+  "scripts": {
+    "test": "echo \"x_x\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxu/matter-collision-events.git"
+  },
+  "author": "dxu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dxu/matter-collision-events/issues"
+  },
+  "homepage": "https://github.com/dxu/matter-collision-events#readme",
+  "dependencies": {
+    "matter-js": "0.12.0"
+  }
+}
