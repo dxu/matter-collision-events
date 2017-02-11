@@ -35,9 +35,9 @@
 
         var boxB = Bodies.rectangle(450, 50, 80, 80);
 
-        boxB.onCollide = function(pair) {
+        boxB.onCollide(function(pair) {
           console.log('BoxB got hit!', pair);
-        }
+        });
 
         var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
 
