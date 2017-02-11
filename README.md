@@ -22,11 +22,11 @@ These events correspond to the Matter.js events `collisionStart`, `collisionActi
 
 This plugin also extends Matter.Body three convenience functions, of type `((pair: Matter.Pair) => void) => void`:
 
-  1. `Matter.Body.onCollide`
-  2. `Matter.Body.onCollideEnd`
-  3. `Matter.Body.onCollideActive`
+  1. `Matter.Body.onCollide(callback)`
+  2. `Matter.Body.onCollideEnd(callback)`
+  3. `Matter.Body.onCollideActive(callback)`
 
-You can use them to register callback handlers, whose first argument is the [Matter.js collision pair](http://brm.io/matter-js/docs/classes/Pair.html) corresponding to the collision.
+You can use them to register event callbacks, whose first argument is the [Matter.js collision pair](http://brm.io/matter-js/docs/classes/Pair.html) corresponding to the collision event.
 
 Take a look at the included examples for usage.
 
