@@ -5,10 +5,9 @@
   </head>
   <body>
     <script src="node_modules/matter-js/build/matter.min.js"></script>
-    <script src="matter-collision-events.js"></script>
+    <script src="./build/matter-collision-events.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function(){
-        Matter.Plugin.register(MatterCollisionEvents);
         Matter.use('matter-collision-events');
 
         var Engine = Matter.Engine,
