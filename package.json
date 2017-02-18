@@ -2,7 +2,7 @@
   "name": "matter-collision-events",
   "version": "0.1.1",
   "description": "Matter.js body collisions events plugin",
-  "main": "matter-collision-events.js",
+  "main": "build/matter-collision-events.min.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "echo \"x_x\" && exit 1"
