@@ -79,7 +79,7 @@ module.exports = Matter;
 var Matter = __webpack_require__(0);
 var MatterCollisionEvents = {
   name: 'matter-collision-events',
-  version: '0.0.0',
+  version: '0.1.1',
   for: 'matter-js@^0.12.0',
   install: function(matter) {
     // add the onCollide, onCollideEnd, and onCollideActive callback handlers
@@ -137,7 +137,9 @@ var MatterCollisionEvents = {
   },
 };
 
-Matter.Plugin.register(MatterCollisionEvents);
+if (Matter) {
+  Matter.Plugin.register(MatterCollisionEvents);
+}
 
 module.exports.MatterCollisionEvents = MatterCollisionEvents;
 
