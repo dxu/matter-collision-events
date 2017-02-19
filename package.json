@@ -1,6 +1,6 @@
 {
   "name": "matter-collision-events",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Matter.js body collisions events plugin",
   "main": "build/matter-collision-events.min.js",
   "scripts": {
