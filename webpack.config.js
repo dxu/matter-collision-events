@@ -9,9 +9,11 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'build'),
+    library: 'MatterCollisionEvents',
+    libraryTarget: 'umd',
   },
   externals: {
-    'matter-js': 'Matter',
+    'matter-js': 'matter-js',
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({

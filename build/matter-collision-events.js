@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("matter-js"));
+	else if(typeof define === 'function' && define.amd)
+		define(["matter-js"], factory);
+	else if(typeof exports === 'object')
+		exports["MatterCollisionEvents"] = factory(require("matter-js"));
+	else
+		root["MatterCollisionEvents"] = factory(root["matter-js"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_0__) {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
@@ -70,7 +80,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-module.exports = Matter;
+module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 /* 1 */
@@ -79,7 +89,7 @@ module.exports = Matter;
 var Matter = __webpack_require__(0);
 var MatterCollisionEvents = {
   name: 'matter-collision-events',
-  version: '0.1.3',
+  version: '0.1.5',
   for: 'matter-js@^0.12.0',
   install: function(matter) {
     // add the onCollide, onCollideEnd, and onCollideActive callback handlers
@@ -137,12 +147,11 @@ var MatterCollisionEvents = {
   },
 };
 
-if (Matter) {
-  Matter.Plugin.register(MatterCollisionEvents);
-}
+Matter.Plugin.register(MatterCollisionEvents);
 
 module.exports.MatterCollisionEvents = MatterCollisionEvents;
 
 
 /***/ })
 /******/ ]);
+});

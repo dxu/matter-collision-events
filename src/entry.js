@@ -1,7 +1,7 @@
 var Matter = require('matter-js');
 var MatterCollisionEvents = {
   name: 'matter-collision-events',
-  version: '0.1.3',
+  version: '0.1.5',
   for: 'matter-js@^0.12.0',
   install: function(matter) {
     // add the onCollide, onCollideEnd, and onCollideActive callback handlers
@@ -59,8 +59,6 @@ var MatterCollisionEvents = {
   },
 };
 
-if (Matter) {
-  Matter.Plugin.register(MatterCollisionEvents);
-}
+Matter.Plugin.register(MatterCollisionEvents);
 
 module.exports.MatterCollisionEvents = MatterCollisionEvents;
