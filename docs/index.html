@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Matter Collision Events Demo</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="./lib/matter.min.js"></script>
+    <script src="./lib/matter-tools.demo.js"></script>
+    <script src="./lib/matter-collision-events.js"></script>
+    <script src="./examples/base.js"></script>
+    <script src="./examples/basic.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        const repoURL = 'https://github.com/dxu/matter-collision-events'
+        MatterTools.Demo.create({
+          preventZoom: true,
+          resetOnOrientation: true,
+          toolbar: {
+            title: 'Matter Collision Events',
+            url: repoURL,
+            reset: true,
+            source: true,
+            fullscreen: true,
+            exampleSelect: true
+          },
+          examples: [
+            {
+              name: 'Basic',
+              id: 'basic',
+              init: generateExample(basicBodies),
+              sourceLink: repoURL + '/blob/master/docs/examples/basic.js'
+            }
+          ]
+        });
+      });
+    </script>
+  </body>
+</html>
