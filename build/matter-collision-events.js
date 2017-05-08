@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("matter-js"));
+		module.exports = factory(require("Matter"));
 	else if(typeof define === 'function' && define.amd)
-		define(["matter-js"], factory);
+		define(["Matter"], factory);
 	else if(typeof exports === 'object')
-		exports["MatterCollisionEvents"] = factory(require("matter-js"));
+		exports["MatterCollisionEvents"] = factory(require("Matter"));
 	else
-		root["MatterCollisionEvents"] = factory(root["matter-js"]);
+		root["MatterCollisionEvents"] = factory(root["Matter"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_0__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache

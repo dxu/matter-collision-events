@@ -13,7 +13,7 @@ module.exports = {
     libraryTarget: 'umd',
   },
   externals: {
-    'matter-js': 'matter-js',
+    'matter-js': 'Matter',
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
