@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("Matter"));
+		module.exports = factory(require("matter-js"));
 	else if(typeof define === 'function' && define.amd)
-		define(["Matter"], factory);
+		define(["matter-js"], factory);
 	else if(typeof exports === 'object')
-		exports["MatterCollisionEvents"] = factory(require("Matter"));
+		exports["MatterCollisionEvents"] = factory(require("matter-js"));
 	else
 		root["MatterCollisionEvents"] = factory(root["Matter"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_0__) {
