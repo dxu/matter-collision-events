@@ -14,7 +14,7 @@ module.exports = {
   },
   externals: {
     'matter-js': {
-      root: 'Matter',
+      global: 'Matter',
       commonjs: 'matter-js',
       commonjs2: 'matter-js',
       amd: 'matter-js',
