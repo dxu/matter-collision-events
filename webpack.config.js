@@ -2,6 +2,7 @@ var path = require('path'),
     webpack = require('webpack'); //to access built-in plugins
 
 module.exports = {
+  mode: 'production',
   entry: {
     'matter-collision-events': './src/entry.js',
     'matter-collision-events.min': './src/entry.js',
@@ -20,9 +21,4 @@ module.exports = {
       amd: 'matter-js',
     },
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      include: /\.min\.js$/,
-    }),
-  ]
 };
