@@ -10,7 +10,25 @@ matter-collision-events is a [Matter.js](https://github.com/liabru/matter-js) pl
 
 Refer to [the official guide on using plugins](https://github.com/liabru/matter-js/wiki/Using-plugins) for step-by-step instructions. `matter-collision-events` can be included in the browser or imported via modules.
 
-You can call `Matter.use('matter-collision-events')` to install the plugin itself for usage.
+### Browser
+
+To install the plugin in the browser:
+
+```js
+Matter.use('matter-collision-events');
+```
+
+### Modules
+
+To install the plugin using ES6 imports:
+
+```js
+import { MatterCollisionEvents } from 'matter-collision-events';
+
+Matter.use(MatterCollisionEvents);
+```
+
+## Events
 
 This plugin triggers three new events on Matter.Body:
 
@@ -19,6 +37,8 @@ This plugin triggers three new events on Matter.Body:
   3. `onCollideActive`
 
 These events correspond to the Matter.js events `collisionStart`, `collisionActive`, and `collisionEnd`, respectively. You can listen to these events via [`Matter.Events`](http://brm.io/matter-js/docs/classes/Events.html#method_on).
+
+## Methods
 
 This plugin also extends Matter.Body with three convenience functions:
 
