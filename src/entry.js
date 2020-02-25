@@ -1,4 +1,6 @@
 var Matter = require('matter-js');
+
+
 var MatterCollisionEvents = {
   name: 'matter-collision-events',
   version: '0.1.5',
@@ -6,6 +8,22 @@ var MatterCollisionEvents = {
   install: function(matter) {
     // add the onCollide, onCollideEnd, and onCollideActive callback handlers
     // to the native Matter.Body created
+
+    function triggerRecursively(body, eventName, pair) {
+      matter.Events.trigger(body, eventName, { pair : pair });
+      body._mceOC &&
+        body._mceOC(pair)
+
+      if (body.parent !== undefined && body.parent !== body) {
+        triggerRecursively(body.parent, eventName, pair);
+	  }
+	}
+
+    function sendEvent(pair, eventName) {
+      triggerRecursively(pair.bodyA, eventName, pair);
+      triggerRecursively(pair.bodyB, eventName, pair);
+    }
+
     var create = matter.Body.create;
     matter.Body.create = function() {
       var body = create.apply(null, arguments);
@@ -17,42 +35,19 @@ var MatterCollisionEvents = {
     matter.after('Engine.create', function() {
       matter.Events.on(this, 'collisionStart', function(event) {
         event.pairs.map(function(pair) {
-          matter.Events.trigger(pair.bodyA, 'onCollide', { pair : pair });
-          matter.Events.trigger(pair.bodyB, 'onCollide', { pair : pair });
-          pair.bodyA._mceOC &&
-            pair.bodyA._mceOC(pair)
-          pair.bodyB._mceOC &&
-            pair.bodyB._mceOC(pair)
+          sendEvent(pair, 'onCollide');
         });
       });
 
       matter.Events.on(this, 'collisionActive', function(event) {
         event.pairs.map(function(pair) {
-          matter.Events.trigger(
-            pair.bodyA,
-            'onCollideActive',
-            { pair: pair }
-          );
-          matter.Events.trigger(
-            pair.bodyB,
-            'onCollideActive',
-            { pair: pair }
-          );
-          pair.bodyA._mceOCA &&
-            pair.bodyA._mceOCA(pair)
-          pair.bodyB._mceOCA &&
-            pair.bodyB._mceOCA(pair)
+          sendEvent(pair, 'onCollideActive');
         });
       });
 
       matter.Events.on(this, 'collisionEnd', function(event) {
         event.pairs.map(function(pair) {
-          matter.Events.trigger(pair.bodyA, 'onCollideEnd', { pair : pair });
-          matter.Events.trigger(pair.bodyB, 'onCollideEnd', { pair : pair });
-          pair.bodyA._mceOCE &&
-            pair.bodyA._mceOCE(pair)
-          pair.bodyB._mceOCE &&
-            pair.bodyB._mceOCE(pair)
+          sendEvent(pair, 'onCollideEnd');
         });
       });
     });
