@@ -17,13 +17,11 @@
     "url": "https://github.com/dxu/matter-collision-events/issues"
   },
   "homepage": "https://github.com/dxu/matter-collision-events#readme",
-  "dependencies": {
-    "matter-tools": "^0.11.1"
-  },
   "peerDependencies": {
     "matter-js": "^0.12.0"
   },
   "devDependencies": {
+    "matter-tools": "^0.11.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }
